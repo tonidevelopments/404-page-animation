@@ -1,0 +1,98 @@
+/* modules */
+@import url("./flex.css");
+@import url("./header.css");
+@import url("./presets.css");
+
+/* main */
+body {
+  height: 100vh;
+  background: var(--rgba-black-1);
+  background: radial-gradient(circle, var(--rgba-black-1) 0%, var(--rgba-black-2) 50%, var(--rgba-black-3) 100%);
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 0px;
+  margin: 0px 0px 20px 0px;
+  text-transform: uppercase;
+  padding: 0;
+  transition: all .4s ease;
+  animation: scale-x-animation .5s linear 0s 1 forwards;
+  transform: scaleY(1);
+  opacity: 0;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 200;
+  transition: all .4s ease;
+  animation: scale-x-animation .5s linear 0s 1 forwards;
+  transform: scaleY(1);
+  opacity: 0;
+}
+
+.button {
+  background-color: transparent;
+  border: .5px solid #FFF;
+  border-radius: 8px;
+  margin-top: 40px;
+  outline: none;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transition: all .4s ease;
+  justify-content: center;
+  animation: scale-x-animation .5s linear 0s 1 forwards;
+}
+
+.button:hover {
+  border: .5px solid #000;
+  cursor: pointer;
+}
+
+.button:hover .button-hover-effect{
+  width: 100%;
+}
+
+.button:hover .button-title{
+  font-weight: 300;
+}
+
+.button-title {
+  font-family: "Roboto", sans-serif !important;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  position: relative;
+  z-index: 1;
+  transition: all .4s ease;
+}
+
+.button-hover-effect {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #FFF;
+  transition: all .4s ease;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+@keyframes scale-x-animation {
+  from {
+    opacity: 0;
+    transform: scaleX(.95);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
